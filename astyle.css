@@ -1,0 +1,352 @@
+:root {
+    --color-darkest: #4f4f4f;
+    --color-brightest: #fff;
+
+    --color-primary: #ff3860;
+    --color-primary-light: #ff4f73;
+
+    --color-navy-1: #131b28;
+    --color-navy-2: #161e2c;
+    --color-navy-3: #1B2435;
+    --color-navy-4: #222c45;
+    --color-navy-5: #2d3956;
+    --color-navy-6: #46526f;
+    --color-navy-7: #606c89;
+
+    --color-white: #fff;
+    --color-black: rgb(0, 0, 0);
+    --color-beige: #FAF8F2;
+    --color-green: #0ee9cb;
+
+    --color-red: #F35353;
+    --color-red-light: #f8d9d5;
+
+    --color-blue: #3E7890;
+    --color-blue-light: #e7f3fb;
+
+    --color-green: #228B22;
+    --color-green-light: rgb(197, 235, 195);
+
+    --color-yellow: #ffeb00;
+    --color-amber: #ffc137;
+    --color-orange: #ff8a37;
+    --color-gray: #B7B7B7;
+    --color-gray-light:#E6E6E6;
+    --color-gray-ultralight:#F9F9F9;
+
+    --color-info: #347fd5;
+    --color-success: #0ee9cb;
+    --color-error: #F35353;
+    --color-warning: #ffd337;
+
+    --color-facebook: #3b5998;
+    --color-twitter: #1da1f2;
+    --color-instagram: #fb3958;
+    --color-youtube: red;
+    --color-linkedin: #4875B4;
+    --color-discord: #7289da;
+    --color-stripe: #6772e5;
+
+    --color-none: transparent;
+}
+
+/* fonts */
+@font-face {
+    font-family: Cooper;
+    src: url("/fonts/cooper/cooperltbtbold.woff");
+}
+
+.font-cooper{
+    font-family: Cooper;
+}
+
+@font-face {
+    font-family: Source;
+    src: url("/fonts/source/SourceSerifPro-Regular.woff");
+}
+
+.font-source{
+    font-family: Source;
+}
+
+@font-face {
+    font-family: SourceBold;
+    src: url("/fonts/source/SourceSerifPro-Bold.woff");
+}
+
+.font-source-bold{
+    font-family: SourceBold;
+}
+
+/* system */
+body,html {
+  background:var(--color-white);
+  color:#444C4E;
+  font-family: Source;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* colors */
+.color-primary {
+  color:var(--color-primary);
+}
+
+.bg-beige {
+    background-color:var(--color-beige);
+}
+
+.color-red {
+	color: var(--color-red);
+}
+.color-red-light {
+	color: var(--color-red-light);
+}
+
+.color-blue {
+	color: var(--color-blue);
+}
+.color-blue-light {
+	color: var(--color-blue-light);
+}
+
+/* layout */
+.rounded-10 {
+  border-radius:10px;
+}
+.rounded-20 {
+  border-radius:20px;
+}
+
+.flex {
+  display:flex;
+}
+
+/* questions */
+.questions-group {
+	border: solid 2px;
+	margin-bottom: 20px;
+}
+
+.questions-group .question {
+
+}
+
+.questions-group .question .answer [type="checkbox"] {
+  width:20px;
+  height:20px;
+}
+
+.questions-group .question .answer .text {
+  line-height:20px;
+}
+
+.questions-group .question .answer  {
+  line-height:20px;
+}
+
+.questions-group .question .answer:hover {
+  background:#2d3c62;
+}
+
+.questions-group .results {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+    width: 100vw;
+    justify-content: center;
+}
+
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.candidate {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 50px;
+}
+
+.candidate p {
+	/* max-height: 200px; */
+	overflow: auto;
+}
+
+.candidate:last-child {
+  margin-left:520px;
+}
+
+.candidate>img {
+  margin-bottom:10px;
+}
+
+.candidate>.header {
+  border-bottom:solid 6px;
+}
+
+.candidate .name {
+  
+}
+
+@media screen and (max-width: 1368px) {
+    .questions-group .results {
+    	margin-top:30px;
+    	position:relative;
+    	width:unset;
+    	left:unset;
+		transform:unset;
+		top:unset;
+	    flex-direction: column;
+    }
+
+    .candidate:last-child {
+	  margin-left:unset;
+	}
+
+	.candidate {
+	  margin: 0;
+	}
+}
+
+/* misc */
+.skewed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: rgb(231, 243, 251);
+    z-index: 0;
+    transform: skewY(-8deg);
+    transform-origin: top left;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+/* navbar */
+.nav-item, .navbar-brand {
+    color: var(--color-black);
+}
+
+/* fancy button */
+.btn-fancy {
+	user-select: none;
+	cursor: pointer;
+}
+.btn-fancy>.content {
+	pointer-events: none;
+	position: relative;
+	text-align: center;
+	padding: 10px 30px;
+	transition: .1s;
+	border: solid 2px;
+	left: -8px;
+	top: -8px;
+}
+.btn-fancy:hover>.content {
+	left: -4px;
+	top: -4px;
+}
+.btn-fancy:active>.content,
+.btn-fancy.selected>.content {
+	left: -2px;
+	top: -2px;
+}
+
+/* fancy button red */
+.btn-fancy.red {
+	background: var(--color-red-light);
+}
+.btn-fancy.red>.content {
+	border-color: var(--color-red);
+}
+
+/* fancy button red */
+.btn-fancy.blue {
+	background: var(--color-blue-light);
+}
+.btn-fancy.blue>.content {
+	border-color: var(--color-blue);
+}
+
+/* fancy button blue */
+.btn-fancy.green {
+	background: var(--color-green-light);
+}
+.btn-fancy.green>.content {
+	border-color: var(--color-green);
+}
+
+/* hover effects */
+@media screen and (min-width: 1368px) {
+	.rise-hover {
+	    position: relative;
+	    transition: top .2s;
+	    top: 0;
+	}
+
+	.rise-hover:hover {
+	    top: -6px;
+	}
+}
+
+/* page title */
+.page-title {
+	font-size: 70px;
+}
+
+@media screen and (max-width: 1368px) {
+    .page-title { 
+    	font-size: 50px;
+    }
+}
+
+/* container */
+@media screen and (min-width: 1200px) {
+	.container {
+		max-width: 1232px;
+	}
+}
+
+.box-effect {
+  position: relative;
+  display:inline;
+}
+.box-effect:after {
+  content: '';
+  position:absolute;
+  top: 12px;
+  right: -6px;
+  width:100%;
+  height:20px;
+  background: rgb(231, 243, 251);
+  z-index: -1;
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 1000; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgba(0, 0, 0, 0.548); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  transition: opacity .2s;
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
